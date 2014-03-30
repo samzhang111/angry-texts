@@ -1,0 +1,37 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+body {
+  padding: 50px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.instructions {
+  max-width: 50em;
+}
+
+.message {
+  width:30em;
+	min-height:3em;
+	margin-bottom:1em;
+}
+.message .text {
+	padding: .5em .5em .5em .5em;
+  border-width: 1px;
+	border-style: solid;
+  border-color: black;
+
+	border-radius: 5px;
+}
+.message .date {
+  float: right;
+	font-size: 10px;
+}
+
+#disclaimer {
+  font-size:12px;
+  width:30em;
+	height:3em;
+}

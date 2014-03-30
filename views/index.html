@@ -1,0 +1,37 @@
+<html>
+<head>
+		<title>Angry Texts</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+		<script src="/javascripts/jquery-1.9.1.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/javascripts/newtext.js"></script>
+</head>
+		<body>
+						<h1>Angry Texts We Never Sent</h1>
+						<div class="instructions">
+						<h3><div>Step 1. Write angry text to spouse, boss, child, etc.</div>
+														<div>Step 2. Change number to (412) 347-1074</div>
+						</h3>
+						<h5>
+														<div>(Promise: It does not store your phone number.)</div>
+						</h5>
+						</div>
+						
+						<div id="messages">
+						{% for item in msgs %}
+						<div class="message">
+														<div class="text">
+														{{item["msg"]}}
+														</div>
+														<div class="date">
+																						{{item["date"]}}
+														</div>
+						</div>
+						{%- endfor %}
+						</div>
+						
+						<div id="disclaimer">
+														<div>A public service brought to you by your local angry person. Powered by <a href="http://nexmo.com">Nexmo</a>.</div>
+						</div>
+		</body>
+</html>
