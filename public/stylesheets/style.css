@@ -22,10 +22,12 @@ a {
   border-width: 1px;
 	border-style: solid;
   border-color: black;
+	box-shadow: 1px 1px 1px 1px;
 
 	border-radius: 5px;
 }
 .message .date {
+  margin-top: .2em;
   float: right;
 	font-size: 10px;
 }
