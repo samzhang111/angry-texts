@@ -23,7 +23,7 @@ exports.process = function(io) {
                 var collection = db.collection('texts');
                 var now = Date.now();
 
-                var fmtnow =  moment(now).format("h:mm A M/D/YYYY");
+                var fmtnow =  moment(now).zone('-0400').format('h:mm A M/D/YYYY');
                 var hashid = hashids.encrypt(parseInt(req.query.messageId, 16));
 
                 var phone_hash = require('crypto').createHash("md5").update(req.query.msisdn).digest("hex");
