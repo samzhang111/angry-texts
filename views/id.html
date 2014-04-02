@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Angry Texts{% endblock %}
+{% block content %}
+
+<div id="messages">
+	<h3>{{item.date}}</h3>
+	<div class="message">
+		<div class="text">
+			{{item.msg}}
+		</div>
+		<!--<div class ="navcontainer">
+			<ul>
+				<li class="link"><a href="{{item.id}}">suggest deletion</a></li>
+			</ul>
+		</div>-->
+	</div>
+</div>
+{% endblock %}
+
+{% block disclaimer %}
+	<div id="disclaimer">
+		<div>A public service brought to you by your local angry person. Powered by <a href="http://nexmo.com">Nexmo</a>.</div>
+	</div>
+{% endblock %}
