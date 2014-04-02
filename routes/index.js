@@ -20,7 +20,7 @@ exports.index = function(req, res){
         collection.find().sort({date:-1}).limit(10).toArray(function(err, results) {
             results.forEach(function(elem) {
                 elem.msg = escape(elem.msg);
-                elem.date = moment(elem.date).format("h:mm A M/D/YYYY");
+                elem.date = moment(elem.date).zone('-0400').format("h:mm A M/D/YYYY");
             });
             res.render('index', { msgs: results });
               // Let's close the db
