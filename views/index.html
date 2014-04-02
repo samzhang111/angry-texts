@@ -1,37 +1,60 @@
-<html>
-<head>
-		<title>Angry Texts</title>
-		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-		<script src="/javascripts/jquery-1.9.1.min.js"></script>
-		<script src="/socket.io/socket.io.js"></script>
-		<script src="/javascripts/newtext.js"></script>
-</head>
-		<body>
-						<h1>Angry Texts I Never Sent</h1>
-						<div class="instructions">
-						<h3><div>Step 1. Write angry text to spouse, boss, child, friend.</div>
-														<div>Step 2. Change number to (412) 347-1074.</div>
-						</h3>
-						<h5>
-														<div>(No phone numbers are stored.)</div>
-						</h5>
+{% extends 'base.html' %}
+
+{% block title %}
+Angry Texts
+{% endblock %}
+
+{% block scripts %}
+<script src="/javascripts/jquery-1.9.1.min.js"></script>
+<script src="/javascripts/jquery.leanModal.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/index.js"></script>
+{% endblock %}
+
+{% block instructions %}
+<div class="instructions">
+<h3><div>Step 1. Write angry text to spouse, boss, child, friend.</div>
+		<div>Step 2. Change number to (412) 347-1074.</div>
+</h3>
+<h5>
+		<div>(No phone numbers are stored.)</div>
+</h5>
+</div>
+{% endblock %}
+
+{% block content %}
+	<div id="messages">
+		{% for item in msgs %}
+		<div class="message">
+						<div class="text">
+						{{item["msg"]}}
 						</div>
-						
-						<div id="messages">
-						{% for item in msgs %}
-						<div class="message">
-														<div class="text">
-														{{item["msg"]}}
-														</div>
-														<div class="date">
-																						{{item["date"]}}
-														</div>
+						<div class ="navcontainer">
+								<ul>
+										<li class="link"><a href="{{item["id"]}}">link</a></li>
+										<!--<li class="link"><a href="#report" id="reportlink">suggest deletion</a></li>-->
+										<li class="date">{{item["date"]}}</li>
+								</ul>
 						</div>
-						{%- endfor %}
-						</div>
-						
-						<div id="disclaimer">
-														<div>A public service brought to you by your local angry person. Powered by <a href="http://nexmo.com">Nexmo</a>.</div>
-						</div>
-		</body>
-</html>
+		</div>
+		{%- endfor %}
+	</div>
+	<div id="report" style="display:none">
+<div id="reason_text">Reason:</div>
+<form>
+	<div><input type="radio" name="reason" value=0 /><label for="reason">It's not angry</label></div>
+	<div><input type="radio" name="reason" value=1 /><label for="reason">It's spam</label></div>
+	<div><input type="radio" name="reason" value=2 /><label for="reason">It contains personal information</label></div>
+	<div><input type="submit" value="Submit" class="submit_link"/></div>
+</form>
+	</div>
+<script>
+$("#reportlink").leanModal({overlay:.04});
+</script>
+{% endblock %}
+
+{% block disclaimer %}
+<div id="disclaimer">
+								<div>A public service brought to you by your local angry person. Powered by <a href="http://nexmo.com">Nexmo</a>.</div>
+</div>
+{% endblock %}

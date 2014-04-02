@@ -1,39 +1,130 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 body {
-  padding: 50px;
-  font-family: 'Open Sans', sans-serif;
+	padding: 50px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 a {
-  color: #00B7FF;
+	color: #00B7FF;
+}
+
+h1 a:link {
+	text-decoration: none;
+	color:black;
+}
+h1 a:hover {
+	text-decoration: none;
+	color:black;
+}
+h1 a:visited {
+	text-decoration: none;
+	color:black;
 }
 
 .instructions {
-  max-width: 50em;
+	max-width: 50em;
 }
 
 .message {
-  width:30em;
+	width:30em;
 	min-height:3em;
 	margin-bottom:1em;
 }
+
 .message .text {
 	padding: .5em .5em .5em .5em;
-  border-width: 1px;
+	border-width: 1px;
 	border-style: solid;
-  border-color: black;
+	border-color: black;
+
+	-webkit-box-shadow: 1px 1px 1px 1px;
+	-moz-box-shadow: 1px 1px 1px 1px;
 	box-shadow: 1px 1px 1px 1px;
 
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
-.message .date {
-  margin-top: .2em;
-  float: right;
+
+.message .navcontainer{
 	font-size: 10px;
+	margin-top:5px;
+	margin-left:10px;
+	margin-bottom:1.5em;
+}
+
+.message .navcontainer ul {
+	margin: 0;padding: 0;
+}
+.message .navcontainer ul li {
+	display: inline;
+	list-style: none;
+}
+li.link {
+	padding-right: 2em;
+}
+
+li.link a:link {
+	text-decoration: none;
+	color:black;
+}
+
+li.link a:visited {
+	text-decoration: none;
+	color:purple;
+}
+
+li.link a:hover {
+	color:#0000CC;
+}
+
+
+.message .navcontainer ul li.date {
+	float: right;	
 }
 
 #disclaimer {
-  font-size:12px;
-  width:30em;
+	font-size:12px;
+	width:30em;
 	height:3em;
+}
+
+#lean_overlay {
+	position: fixed;
+	z-index:100;
+	top: 0px;
+	left: 0px;
+	height:100%;
+	width:100%;
+	background: #000;
+	display: none;
+}
+
+
+#report {
+	padding: .5em .5em .5em .5em;
+	background-color: #EEE;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 1px 1px 1px 1px;
+	-moz-box-shadow: 1px 1px 1px 1px;
+	box-shadow: 1px 1px 1px 1px;
+	min-width:10em;
+}
+
+#reason_text {
+	margin-left:.5em;
+	margin-bottom:1em;
+}
+
+#submit_link {
+	background-color: transparent;
+	text-decoration: underline;
+	border: none;
+	color: blue;
+	cursor: pointer;
 }
