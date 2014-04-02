@@ -1,7 +1,7 @@
 /* jslint node: true */
 "use strict";
 
-var config = require('../config');
+//var config = require('../config');
 var moment = require('moment');
 var Hashids = require('hashids');
 var salt = process.env.SALT || config.salt;
